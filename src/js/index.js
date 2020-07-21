@@ -1,6 +1,5 @@
 import { h, render } from 'preact';
 import '@/assets/styles/style.css';
-import { mountTest, mountSignup } from './utils';
 import { App } from './App';
 
 // const testBtn = document.querySelector('#test');
@@ -15,5 +14,4 @@ import { App } from './App';
 //         mountSignup();
 //     };
 // });
-
 render(<App />, document.getElementById('app'));

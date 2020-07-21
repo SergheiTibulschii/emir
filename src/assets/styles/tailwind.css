@@ -20,6 +20,16 @@ button:focus {
     @apply tracking-wider text-white font-semibold;
 }
 
+.em-btn:after {
+    content:"";
+    display:block;
+    position:absolute;
+    top:-30px;
+    right:-20px;
+    left:-20px;
+    bottom:-30px;
+}
+
 .em-btn.-big {
     @apply text-f7 px-4 py-c1;
 }
