@@ -3,10 +3,13 @@ import { mountSignup } from '../utils';
 import { Button } from '../components/Button/Button';
 import cn from 'classnames';
 import { Video } from '../components/Video';
+import ywk from '../../assets/images/svg/ywk-1.svg';
+import ywk2 from '../../assets/images/svg/ywk-2.svg';
+import ywk3 from '../../assets/images/svg/ywk-3.svg';
 
 const data = [
     {
-        url: './assets/images/svg/ywk-1.svg',
+        url: ywk,
         text: `
         Как перестать испытывать <br class='md:hidden lg:block' />
                             угрызения совести за <br class='md:hidden lg:block' />
@@ -14,14 +17,14 @@ const data = [
         order: ['text', 'img'],
     },
     {
-        url: './assets/images/svg/ywk-2.svg',
+        url: ywk2,
         text: `Лайфхаки, которые ускорят <br class='md:hidden lg:block' />
         твой процесс изучения <br class='md:hidden lg:block' />
         английского`,
         order: ['img', 'text'],
     },
     {
-        url: './assets/images/svg/ywk-3.svg',
+        url: ywk3,
         text: `Какие сериалы подходят <br class='md:hidden lg:block' />
         именно тебе`,
         order: ['text', 'img'],
@@ -35,7 +38,7 @@ const YouWillKnow = ({ url, html, order }) => {
         'mb-8 md:mb-c9 lg:mb-0 last:mb-0'
     );
     const imgClasses = cn(
-        'lg:order-none',
+        'w-auto md:w-c16 lg:w-auto lg:order-none',
         {
             'md:order-2': first === 'text' && second === 'img',
             'md:order-1': first === 'img' && second === 'text',
@@ -87,7 +90,6 @@ export const YouWillFindOut = () => {
                         type="danger"
                         shape="rounded"
                         title="Записаться"
-                        magnetic={true}
                     />
                 </div>
             </div>

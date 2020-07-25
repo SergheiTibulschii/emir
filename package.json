@@ -35,7 +35,6 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
-    "gsap": "^3.2.6",
     "imask": "^6.0.5",
     "preact": "^10.4.6",
     "preact-render-to-string": "^5.1.10",

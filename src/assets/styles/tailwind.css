@@ -17,16 +17,6 @@ button:focus {
     @apply tracking-wider text-white font-semibold;
 }
 
-.em-btn.-magnetic:after {
-    content:"";
-    display:block;
-    position:absolute;
-    top:-30px;
-    right:-20px;
-    left:-20px;
-    bottom:-30px;
-}
-
 .em-btn.-big {
     @apply text-f7 px-4 py-c1;
 }
@@ -304,8 +294,8 @@ input.em-input:focus {
     }
 
     .ekaterina-video {
-        width: 596px;
-        min-width: 596px;
+        width: 580px;
+        min-width: 580px;
         height: auto;
     }
 }

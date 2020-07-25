@@ -8,11 +8,14 @@ export const Video = ({ className }) => {
     const videoRef = useRef();
     const [videoState, setVideoState] = useState('new');
     const [screen, setScreen] = useState(document.documentElement.clientWidth);
-    const [controls, showControls] = useState(screen < 1024);
+    const [controls, showControls] = useState(
+        screen < 1024 || videoState === 'new'
+    );
 
     useEffect(() => {
         setScreen(document.documentElement.clientWidth);
         let rt;
+
         function onTouch() {
             if (!controls) {
                 showControls(true);
@@ -20,12 +23,19 @@ export const Video = ({ className }) => {
                     showControls(false);
                 }, 2000);
             }
+            console.log('touchend');
+        }
+
+        function onEnd() {
+            setVideoState('new');
         }
 
         videoRef.current.addEventListener('touchend', onTouch);
+        videoRef.current.addEventListener('ended', onEnd);
 
         return () => {
             videoRef.current.removeEventListener('touchend', onTouch);
+            videoRef.current.removeEventListener('ended', onEnd);
             if (rt) {
                 clearTimeout(rt);
             }
@@ -35,6 +45,10 @@ export const Video = ({ className }) => {
     useEffect(() => {
         if (videoState === 'play') {
             videoRef.current.play();
+            if (screen < 1024) {
+                console.log('dwd');
+                showControls(false);
+            }
         } else if (videoState === 'pause') {
             videoRef.current.pause();
         }

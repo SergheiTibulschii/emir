@@ -43,7 +43,7 @@ export const Main = () => {
                         </div>
                     </div>
                     <div className="flex md:justify-end md:w-1/2 lg:w-auto relative">
-                        <div className="flex md:order-2 w-20 h-20 md:w-c9 md:h-c9 lg:w-c9 lg:h-c9 rounded-full items-center justify-center absolute right-c3 top-c2 md:relative md:right-auto md:top-auto overflow-hidden lg:mr-4">
+                        <div className="flex md:order-2 w-20 h-20 md:w-c9 md:h-c9 lg:w-c9 lg:h-c9 rounded-full items-center justify-center absolute right-c2 top-0 md:relative md:right-auto md:top-auto overflow-hidden lg:mr-4">
                             <img
                                 src="./assets/images/png/circle-photo.png"
                                 alt=""
@@ -56,7 +56,7 @@ export const Main = () => {
                             </div>
                         </div>
                         <div className="flex md:order-1 flex-col items-center md:items-start w-full md:w-auto md:ml-0 mb-10 lg:mb-0">
-                            <div className="inline-block text-center md:text-left text-f0 md:text-f1 font-bold mb-c1 lg:mb-0 ml-5 md:ml-0">
+                            <div className="inline-block text-center md:text-left text-f0 md:text-f1 font-bold mb-c1 md:mb-c1 ml-5 md:ml-0">
                                 Екатерина Миронова
                             </div>
                             <div className="inline-flex text-left text-sm md:text-f2">
@@ -67,14 +67,14 @@ export const Main = () => {
                         </div>
                     </div>
                     <div className="flex flex-col">
-                        <div className="text-sm md:text-f2 mb-c1 md:mb-0 md:mt-c2 lg:mb-c2 order-1 md:order-2 lg:order-1">
+                        <div className="text-sm md:text-f2 mb-c1 md:mb-0 lg:mb-c2 order-1 md:order-2 lg:order-1">
                             <div className="lg:mb-c1 text-center lg:text-center">
                                 До начала вебинара осталось:
                             </div>
                             <Timer />
                         </div>
                         <div className="text-center order-2 md:order-1 lg:order-2">
-                            <SignupBtn magnetic={true} />
+                            <SignupBtn />
                         </div>
                     </div>
                 </div>

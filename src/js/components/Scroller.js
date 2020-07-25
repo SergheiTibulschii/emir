@@ -36,7 +36,7 @@ export const Scroller = () => {
     return (
         <div className="relative w-full">
             <div
-                className="absolute top-0 left-0 z-50 rounded-lg"
+                className="absolute top-0 left-0 z-50"
                 style={{
                     height: '4px',
                     width: `${percent}%`,
@@ -49,7 +49,7 @@ export const Scroller = () => {
                     height: '4px',
                     width: '100%',
                 }}
-                className="absolute top-0 left-0 rounded-lg bg-blue-light"
+                className="absolute top-0 left-0 bg-blue-light"
             ></div>
         </div>
     );

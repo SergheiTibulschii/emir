@@ -4,6 +4,7 @@ import { unmount, validateEmail } from './utils';
 import { Input } from './components/Input';
 import { useState, useEffect, useRef } from 'preact/hooks';
 import { Button } from './components/Button/Button';
+import { CalendarBtn } from './components/Button/CalendarBtn';
 
 const buttons = {
     sms: {
@@ -44,31 +45,7 @@ const Success = () => {
                 <div className="mr-2 lg:mr-10 text-f2 lg:text-f3">
                     Записать дату <br /> в календарь
                 </div>
-                <div class="calendar-btn-container relative flex items-center justify-center self-start mr-2 lg:mr-4">
-                    <a
-                        href="https://calendar.google.com/"
-                        target="_blank"
-                        class="em-calendar-btn relative z-40"
-                    >
-                        <img
-                            class="absolute z-0 hover:z-50"
-                            src="./assets/images/svg/calendar-white.svg"
-                            alt=""
-                            style="height: 34px;"
-                        />
-                    </a>
-                    <img
-                        class="absolute z-50 hover:z-0"
-                        src="./assets/images/svg/calendar.svg"
-                        alt=""
-                    />
-                    <div class="absolute pointer-events-none">
-                        <img
-                            src="./assets/images/svg/circle-frame.svg"
-                            alt=""
-                        />
-                    </div>
-                </div>
+                <CalendarBtn />
             </div>
         </div>
     );
@@ -218,7 +195,7 @@ export const SignUp = () => {
                 </div>
                 <div className="relative items-center">
                     <div
-                        className="relative"
+                        className="absolute top-0 left-0 z-50"
                         style={{
                             height: '4px',
                             width: `${((step + 1) * 100) / 4}%`,
@@ -230,7 +207,7 @@ export const SignUp = () => {
                         style={{
                             height: '4px',
                         }}
-                        className="absolute rounded-lg bg-blue-light"
+                        className="absolute top-0 left-0 w-full z-40 rounded-lg bg-blue-light"
                     ></div>
                 </div>
             </div>
