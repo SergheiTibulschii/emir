@@ -174,7 +174,7 @@ const TestComponent = () => {
                 </div>
                 <div className="relative items-center">
                     <div
-                        className="absolute left-0 top-0 z-50"
+                        className="absolute top-0 left-0 z-50"
                         style={{
                             height: '4px',
                             width: `${
@@ -189,7 +189,7 @@ const TestComponent = () => {
                         style={{
                             height: '4px',
                         }}
-                        className="absolute left-0 top-0 w-full z-40 bg-blue-light"
+                        className="absolute top-0 left-0 w-full z-40 rounded-lg bg-blue-light"
                     ></div>
                 </div>
             </div>
@@ -210,9 +210,9 @@ const TestComponent = () => {
                             </button>
                         )}
                     </div>
-                    <div className="hidden lg:block relative items-center rounded-lg px-10 flex-1">
+                    <div className="hidden lg:flex relative items-center rounded-lg px-10 flex-1">
                         <div
-                            className="relative top-0 left-0 z-50 rounded-lg"
+                            className="relative z-50 rounded-lg"
                             style={{
                                 height: '4px',
                                 width: `${
@@ -228,7 +228,7 @@ const TestComponent = () => {
                                 height: '4px',
                                 width: 'calc(100% - 80px)',
                             }}
-                            className="absolute top-o left-0 z-40 rounded-lg bg-blue-light"
+                            className="absolute rounded-lg bg-blue-light"
                         ></div>
                     </div>
                     <button

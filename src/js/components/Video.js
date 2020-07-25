@@ -2,6 +2,7 @@ import { h } from 'preact';
 import { PlayBtn } from './Button/PlayBtn';
 import { useState, useEffect, useRef } from 'preact/hooks';
 import video from '../../assets/video/ekaterina-mir.mp4';
+import poster from '../../assets/images/png/thumbnail.jpg';
 import { PauseBtn } from './Button/PauseBtn';
 
 export const Video = ({ className }) => {
@@ -77,7 +78,7 @@ export const Video = ({ className }) => {
             onMouseLeave={handleMouseLeave}
             className={`ekaterina-video relative ${className}`}
         >
-            <video ref={videoRef}>
+            <video poster={poster} ref={videoRef} className="object-cover">
                 <source src={video} type="video/mp4"></source>
             </video>
             {controls ? (
