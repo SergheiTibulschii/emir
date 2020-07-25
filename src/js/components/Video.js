@@ -46,7 +46,6 @@ export const Video = ({ className }) => {
         if (videoState === 'play') {
             videoRef.current.play();
             if (screen < 1024) {
-                console.log('dwd');
                 showControls(false);
             }
         } else if (videoState === 'pause') {
@@ -67,7 +66,9 @@ export const Video = ({ className }) => {
     };
 
     const handleMouseLeave = () => {
-        showControls(false);
+        if (videoState !== 'new') {
+            showControls(false);
+        }
     };
 
     return (
