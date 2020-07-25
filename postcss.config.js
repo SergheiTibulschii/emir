@@ -1,5 +1,5 @@
 const purgecss = require('@fullhuman/postcss-purgecss')({
-    content: ['./src/**/*.html'],
+    content: ['./src/js/**/*.js'],
 
     defaultExtractor: (content) => {
         // Capture as liberally as possible, including things like `h-(screen-1.5)`

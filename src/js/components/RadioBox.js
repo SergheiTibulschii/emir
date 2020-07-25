@@ -21,10 +21,13 @@ export const RadioBox = ({
             style={{
                 display: 'grid',
                 gridTemplateColumns: 'min-content auto',
-                gridGap: '22px',
+                gridGap: '16px',
             }}
         >
-            <span className="radio__input flex items-center">
+            <span
+                onClick={handleClick}
+                className="radio__input flex items-center"
+            >
                 <input
                     checked={defaultChecked}
                     type="radio"
@@ -33,7 +36,6 @@ export const RadioBox = ({
                     ref={inputRef}
                 />
                 <div
-                    onClick={handleClick}
                     style={{ transform: 'translateY(-0.05em)' }}
                     className="radio__control"
                 >
@@ -42,7 +44,7 @@ export const RadioBox = ({
             </span>
             <span
                 onClick={handleClick}
-                class="radio__label leading-none text-f2 flex items-center"
+                class="radio__label leading-none text-sm lg:text-f2 flex items-center"
             >
                 {label}
             </span>

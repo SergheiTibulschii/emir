@@ -16,8 +16,7 @@ export const SocialsFooter = () => {
                         <a href="#">
                             <img
                                 src="./assets/images/svg/instagram.svg"
-                                alt=""
-                                width="72px"
+                                width={72}
                             />
                         </a>
                     </div>
@@ -26,7 +25,7 @@ export const SocialsFooter = () => {
                             <img
                                 src="./assets/images/svg/telegram.svg"
                                 alt=""
-                                width="72px"
+                                width={72}
                             />
                         </a>
                     </div>
@@ -35,7 +34,7 @@ export const SocialsFooter = () => {
                             <img
                                 src="./assets/images/svg/whats-app.svg"
                                 alt=""
-                                width="72px"
+                                width={72}
                             />
                         </a>
                     </div>

@@ -10,13 +10,13 @@ const modalWrapperClasses = cn(
 
 const modalClasses = cn(
     'em-modal',
-    'absolute rounded-lg bg-white z-50',
-    'p-6 shadow-lg'
+    'lg:absolute w-full h-full overflow-hidden rounded-lg bg-white z-50 lg:h-auto lg:w-c14',
+    'shadow-lg'
 );
 
 const modalHeader = cn('em-modal-header', 'flex justify-end');
 
-const modalBody = cn('em-modal-body', 'px-c13');
+const modalBody = cn('em-modal-body', 'md:px-c8');
 
 export const Modal = ({ children }) => {
     const ref = useRef();
@@ -28,12 +28,7 @@ export const Modal = ({ children }) => {
             className={modalWrapperClasses}
             style={{ background: 'rgba(0,0,0, 0.1)' }}
         >
-            <div
-                div
-                ref={ref}
-                style={{ width: '672px' }}
-                className={modalClasses}
-            >
+            <div div ref={ref} className={modalClasses}>
                 {children}
             </div>
         </div>

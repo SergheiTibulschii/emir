@@ -13,10 +13,12 @@ const customSizes = {
     c11: '125px',
     c12: '86px',
     c13: '68px',
+    c14: '675px',
+    c15: '13rem',
 };
 
 module.exports = {
-    purge: [],
+    purge: false,
     theme: {
         extend: {
             fontSize: {
@@ -72,12 +74,16 @@ module.exports = {
             },
             inset: {
                 c1: '6px',
+                c2: '12px',
+                c3: '24px',
                 50: '50%',
             },
         },
     },
     variants: {
         zIndex: ['hover'],
+        margin: ['responsive', 'last', 'first'],
+        display: ['responsive', 'hover'],
     },
     plugins: [],
 };

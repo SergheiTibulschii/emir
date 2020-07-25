@@ -16,7 +16,7 @@ export const SpeakerDescription = () => {
                             <h1 className="text-f4 md:text-f1 lg:text-f6 font-bold mb-c1 lg:mb-3">
                                 Екатерина Миронова
                             </h1>
-                            <div className="text-sm md:text-f2 pr-8">
+                            <div className="text-sm md:text-f2 md:pr-c10 lg:pr-8">
                                 <div className="block md:hidden lg:block mb-2 md:mb-5 lg:mb-2">
                                     <p className="mb-2">Привет!</p>
                                     <p>
@@ -52,7 +52,7 @@ export const SpeakerDescription = () => {
                                         <img
                                             src="./assets/images/svg/instagram.svg"
                                             alt=""
-                                            width="100%"
+                                            className="w-full"
                                         />
                                     </a>
                                 </div>
@@ -64,7 +64,7 @@ export const SpeakerDescription = () => {
                                         <img
                                             src="./assets/images/svg/telegram.svg"
                                             alt=""
-                                            width="100%"
+                                            className="w-full"
                                         />
                                     </a>
                                 </div>
@@ -76,7 +76,7 @@ export const SpeakerDescription = () => {
                                         <img
                                             src="./assets/images/svg/whats-app.svg"
                                             alt=""
-                                            width="100%"
+                                            className="w-full"
                                         />
                                     </a>
                                 </div>

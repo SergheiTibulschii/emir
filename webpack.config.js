@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const isProd = process.env.NODE_ENV === 'production';
 const isDev = !isProd;
@@ -44,12 +45,16 @@ module.exports = {
                 },
             },
             {
-                test: /\.(png|jpe?g|gif)$/i,
+                test: /\.(png|jpe?g|gif|svg)$/i,
                 use: [
                     {
                         loader: 'file-loader',
                     },
                 ],
+            },
+            {
+                test: /\.mp4$/,
+                use: 'file-loader?name=videos/[name].[ext]',
             },
         ],
     },
@@ -80,7 +85,7 @@ module.exports = {
         hot: isDev,
     },
     optimization: {
-        minimizer: [new OptimizeCSSAssetsPlugin({})],
+        minimizer: [new UglifyJsPlugin(), new OptimizeCSSAssetsPlugin({})],
     },
     resolve: {
         extensions: ['.js'],

@@ -18,13 +18,21 @@ export const Input = ({ onChange, label, type, name, error }) => {
         }
     }, []);
 
-    const classes = cn('em-input', {
-        '-error': error && error[name],
-    });
+    const classes = cn(
+        'em-input',
+        {
+            '-error': error && error[name],
+        },
+        'text-f3 lg:text-f7'
+    );
 
     return (
         <div className="relative">
-            {label && <label className="block mb-c2 text-f2">{label}</label>}
+            {label && (
+                <label className="block mb-c2 text-sm lg:text-f2">
+                    {label}
+                </label>
+            )}
 
             <input
                 className={classes}

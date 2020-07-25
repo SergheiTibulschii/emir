@@ -13,14 +13,11 @@ button:focus {
 
 @tailwind components;
 
-
-@tailwind utilities;
-
 .em-btn {
     @apply tracking-wider text-white font-semibold;
 }
 
-.em-btn:after {
+.em-btn.-magnetic:after {
     content:"";
     display:block;
     position:absolute;
@@ -36,6 +33,14 @@ button:focus {
 
 .em-btn:not(.-big) {
     @apply text-f3 py-c2 px-8;
+}
+
+.em-btn.-reducable {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 18px;
 }
 
 .em-btn.-rounded {
@@ -123,6 +128,31 @@ button:focus {
     box-shadow: 0px 10px 20px rgba(0, 17, 168, 0.45);
 }
 
+.em-play-btn {
+    @apply flex w-20 h-20 rounded-full items-center justify-center overflow-hidden;
+    opacity: 0.2;
+    transition: opacity 0.15s;
+    background: radial-gradient(
+        149.96% 100% at 52.29% -0.07%,
+        #3cb9ff 0%,
+        #0011a8 100%
+    );
+}
+
+.em-play-btn:hover {
+    opacity: 1;
+    box-shadow: 0px 10px 25px rgba(0, 17, 168, 0.51);
+}
+
+.em-play-btn:hover + img {
+    display: none;
+}
+
+.em-play-btn:active {
+    background: radial-gradient(191.44% 127.66% at 51.87% 127.66%, #3CB9FF 0%, #0011A8 73.96%);
+}
+
+
 .em-calendar-btn {
     @apply flex w-20 h-20 rounded-full items-center justify-center overflow-hidden;
     opacity: 0.2;
@@ -164,43 +194,34 @@ button:focus {
     height: 423px;
 }
 
-@media (max-width: 400px) {
-    .ekaterina-img {
-        height: 211px;
-        background-position: unset;
-    }
-}
-
-@media (min-width: 768px) {
-    .title {
-        @apply text-f6;
-    }
-
-    .em-calendar-btn {
-        @apply w-c9 h-c9;
-    }
-}
-
 .radio__input input {
     opacity: 0;
     width: 0;
     height: 0;
+    position: absolute;
 }
 
 .radio .radio__input input + .radio__control {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 34px;
-    height: 34px;
+    width: 25px;
+    height: 25px;
     background: radial-gradient(149.96% 100% at 52.29% -0.07%, #3CB9FF 0%, #0011A8 100%);
     border-radius: 50%;
 }
 
+.center-absolute {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
 .radio .radio__input input + .radio__control .radio__control_inner {
     @apply rounded-full bg-white transition-all duration-300;
-    width: 30px;
-    height: 30px;
+    width: 23px;
+    height: 23px;
 }
 
 .radio .radio__input input:checked + .radio__control .radio__control_inner {
@@ -209,7 +230,7 @@ button:focus {
 }
 
 input.em-input {
-    @apply text-f7 tracking-wider font-semibold py-c1 px-4 w-full;
+    @apply tracking-wider font-semibold py-c1 px-4 w-full;
     box-shadow: inset 0px 0px 5px #3CB9FF;
 }
 
@@ -221,4 +242,72 @@ input.em-input:focus {
     @apply outline-none;
     box-shadow: inset 0px 0px 5px #004FEA;
 }
+
+.ekaterina-video {
+    width: 312px;
+    min-width: 312px;
+    height: 240px;
+}
+
+@media (max-width: 400px) {
+    .ekaterina-img {
+        height: 211px;
+        background-position: unset;
+    }
+}
+
+@media (min-width: 768px) {
+    .em-btn.-reducable {
+        font-size: 32px;
+    }
+
+    .title {
+        @apply text-f6;
+    }
+
+    .em-play-btn {
+        @apply w-c9 h-c9;
+    }
+
+    .em-calendar-btn {
+        @apply w-c9 h-c9;
+    }
+    
+    .ekaterina-video {
+        width: 544px;
+        min-width: 544px;
+        height: auto;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    .radio .radio__input input + .radio__control {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 34px;
+        height: 34px;
+        background: radial-gradient(149.96% 100% at 52.29% -0.07%, #3CB9FF 0%, #0011A8 100%);
+        border-radius: 50%;
+    }
+    
+    .radio .radio__input input + .radio__control .radio__control_inner {
+        @apply rounded-full bg-white transition-all duration-300;
+        width: 30px;
+        height: 30px;
+    }
+    
+    .radio .radio__input input:checked + .radio__control .radio__control_inner {
+        width: 16px;
+        height: 16px;
+    }
+
+    .ekaterina-video {
+        width: 596px;
+        min-width: 596px;
+        height: auto;
+    }
+}
 /* purgecss end ignore */
+@tailwind utilities;
