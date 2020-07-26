@@ -1,4 +1,6 @@
 import { h } from 'preact';
+import { mobileSocials } from '../utils';
+import { Social } from '../components/Social';
 
 export const SocialsFooter = () => {
     return (
@@ -12,32 +14,14 @@ export const SocialsFooter = () => {
                     aria-label="social"
                     className="em-social flex justify-around py-6 px-4"
                 >
-                    <div className="social">
-                        <a href="#">
-                            <img
-                                src="./assets/images/svg/instagram.svg"
-                                width={72}
-                            />
-                        </a>
-                    </div>
-                    <div className="social">
-                        <a href="#">
-                            <img
-                                src="./assets/images/svg/telegram.svg"
-                                alt=""
-                                width={72}
-                            />
-                        </a>
-                    </div>
-                    <div className="social">
-                        <a href="#">
-                            <img
-                                src="./assets/images/svg/whats-app.svg"
-                                alt=""
-                                width={72}
-                            />
-                        </a>
-                    </div>
+                    {mobileSocials.map(({ alt, url, link }) => (
+                        <Social
+                            className="w-c17 h-c17"
+                            alt={alt}
+                            url={url}
+                            link={link}
+                        />
+                    ))}
                 </div>
             </div>
         </section>

@@ -16,6 +16,7 @@ const customSizes = {
     c14: '675px',
     c15: '13rem',
     c16: '250px',
+    c17: '4.5rem',
 };
 
 module.exports = {

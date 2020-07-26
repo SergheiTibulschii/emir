@@ -106,6 +106,12 @@ export const SignUp = () => {
         };
     }, [data, activeBtn]);
 
+    useEffect(() => {
+        if (success) {
+            console.log(data);
+        }
+    }, [success]);
+
     const handleContactBtnClick = (btn) => () => {
         setActiveBtn(btn);
     };
