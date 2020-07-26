@@ -29,7 +29,7 @@ export const Main = () => {
                 </div>
                 <div className="md:flex md:flex-wrap md:justify-center lg:justify-between lg:px-0 mt-5 md:mt-12 lg:mt-c6">
                     <div className="w-full relative flex justify-center md:justify-start lg:pr-4 md:w-1/2 lg:w-auto mb-10 lg:mb-0">
-                        <CalendarBtn />
+                        <CalendarBtn className="absolute md:relative" />
                         <div className="flex items-center mt-2 md:mt-0 md:block lg:block">
                             <div className="hidden md:block md:mb-c1 text-f1 font-bold">
                                 Когда:

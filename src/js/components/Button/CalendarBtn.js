@@ -3,9 +3,9 @@ import calendarWhite from '../../../assets/images/svg/calendar-white.svg';
 import calendar from '../../../assets/images/svg/calendar.svg';
 import frame from '../../../assets/images/svg/circle-frame.svg';
 
-export const CalendarBtn = () => {
+export const CalendarBtn = ({ className }) => {
     return (
-        <div className="block absolute left-c3 md:relative md:left-auto">
+        <div className={`block left-c3 md:left-auto ${className}`}>
             <div className="calendar-container relative flex items-center justify-center self-start mr-2 md:mr-4 z-40">
                 <a
                     href="https://calendar.google.com"

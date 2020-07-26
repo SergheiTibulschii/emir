@@ -10,7 +10,7 @@ const modalWrapperClasses = cn(
 
 const modalClasses = cn(
     'em-modal',
-    'lg:absolute w-full h-full overflow-hidden rounded-lg bg-white z-50 lg:h-auto lg:w-c14',
+    'lg:absolute w-full h-full overflow-hidden lg:rounded-lg bg-white z-50 lg:h-auto lg:w-c14',
     'shadow-lg'
 );
 

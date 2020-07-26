@@ -163,7 +163,7 @@ export const SignUp = () => {
                 <div className="hidden lg:block mb-5">
                     <Button title={activeBtn.title} type="primary" big={true} />
                 </div>
-                <div className="lg:hidden mb-5">
+                <div className="lg:hidden mb-4">
                     <Button reducable title={activeBtn.title} type="primary" />
                 </div>
                 <Input
@@ -273,7 +273,7 @@ export const SignUp = () => {
                             <div className="mb-10">
                                 {!activeBtn ? (
                                     <div>
-                                        <div className="mb-2 lg:mb-5">
+                                        <div className="mb-4 lg:mb-5">
                                             <span className="mr-2 md:mr-12 lg:mr-c5">
                                                 <Button
                                                     type="ghost"
