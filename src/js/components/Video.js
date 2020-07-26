@@ -9,7 +9,12 @@ import { useScreen } from '../utils';
 export const Video = ({ className }) => {
     return (
         <div className={`ekaterina-video relative ${className}`}>
-            <video controls playsInline>
+            <video
+                className="object-cover"
+                poster={poster}
+                controls
+                playsInline
+            >
                 <source src={video} type="video/mp4"></source>
             </video>
         </div>
