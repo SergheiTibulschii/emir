@@ -11,6 +11,10 @@ button:focus {
     @apply outline-none;
 }
 
+input {
+    -webkit-appearance: none;
+}
+
 @tailwind components;
 
 .em-btn {
@@ -221,15 +225,22 @@ button:focus {
 
 input.em-input {
     @apply tracking-wider font-semibold py-c1 px-4 w-full;
+    -webkit-appearance: none;
+    -webkit-box-shadow: inset 0px 0px 5px #3CB9FF;
+    -moz-box-box-shadow: inset 0px 0px 5px #3CB9FF;
     box-shadow: inset 0px 0px 5px #3CB9FF;
 }
 
 input.em-input.-error {
+    -webkit-box-shadow: rgb(230, 106, 106) 0px 0px 5px inset;
+    -moz-box-box-shadow: rgb(230, 106, 106) 0px 0px 5px inset;
     box-shadow: rgb(230, 106, 106) 0px 0px 5px inset;
 }
 
 input.em-input:focus {
     @apply outline-none;
+    -webkit-box-shadow: inset 0px 0px 5px #004FEA;
+    -moz-box-box-shadow: inset 0px 0px 5px #004FEA;
     box-shadow: inset 0px 0px 5px #004FEA;
 }
 

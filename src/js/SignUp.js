@@ -119,7 +119,7 @@ export const SignUp = () => {
                 from_name: data.useName,
                 message_html: message,
             };
-            emailjs.send('mailgun', 'template_UX7imrTZ', params).then(
+            emailjs.send('mailgun', 'template_f02aXQ9s', params).then(
                 function (response) {
                     console.log('SUCCESS!', response.status, response.text);
                 },

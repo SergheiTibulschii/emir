@@ -79,6 +79,7 @@ export const Video = ({ className }) => {
             className={`ekaterina-video relative ${className}`}
         >
             <video
+                preload="auto"
                 poster={poster}
                 ref={videoRef}
                 className="object-cover"
