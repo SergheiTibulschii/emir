@@ -97,7 +97,7 @@ export const webSocials = [
     {
         alt: 'instagram',
         url: inst,
-        link: 'instagram://user?username=english.mir',
+        link: 'http://instagram.com/_u/english.mir',
     },
     {
         alt: 'facebook',
@@ -110,12 +110,12 @@ export const mobileSocials = [
     {
         alt: 'instagramm',
         url: inst,
-        link: 'instagram://user?username=english.mir',
+        link: 'http://instagram.com/_u/english.mir',
     },
     {
         alt: 'telegram',
         url: tele,
-        link: 'tg://resolve?domain=@English_Mir_account',
+        link: 'tg://resolve?domain=English_Mir_account',
     },
     {
         alt: 'whats-app',
