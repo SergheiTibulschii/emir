@@ -114,26 +114,13 @@ export const SignUp = () => {
                 data[activeBtn.id]
             );
 
-            var params = {
-                to_name: 'Ekaterina',
-                from_name: data.useName,
-                message_html: message,
-            };
-            emailjs
-                .send(
-                    'mailgun',
-                    'template_f02aXQ9s',
-                    'user_wmCKu7qUnIRL4iFEwtMuV',
-                    params
-                )
-                .then(
-                    function (response) {
-                        console.log('SUCCESS!', response.status, response.text);
-                    },
-                    function (error) {
-                        console.log('FAILED...', error);
-                    }
-                );
+            Email.send({
+                SecureToken: 'e39e78be-0c0a-4922-b840-f24ea9540ab3',
+                To: 'serghei.tibulschii@gmail.com',
+                From: 'joradodgeviper@gmail.com',
+                Subject: 'This is the subject',
+                Body: message,
+            }).then((message) => alert(message));
         }
     }, [success]);
 
