@@ -78,7 +78,12 @@ export const Video = ({ className }) => {
             onMouseLeave={handleMouseLeave}
             className={`ekaterina-video relative ${className}`}
         >
-            <video poster={poster} ref={videoRef} className="object-cover">
+            <video
+                poster={poster}
+                ref={videoRef}
+                className="object-cover"
+                playsInline
+            >
                 <source src={video} type="video/mp4"></source>
             </video>
             {controls ? (

@@ -5,6 +5,7 @@ import { Input } from './components/Input';
 import { useState, useEffect, useRef } from 'preact/hooks';
 import { Button } from './components/Button/Button';
 import { CalendarBtn } from './components/Button/CalendarBtn';
+import { templates } from './templates';
 
 const buttons = {
     sms: {
@@ -108,7 +109,24 @@ export const SignUp = () => {
 
     useEffect(() => {
         if (success) {
-            console.log(data);
+            const message = templates[activeBtn.id](
+                data.userName,
+                data[activeBtn.id]
+            );
+
+            var params = {
+                to_name: 'Ekaterina',
+                from_name: data.useName,
+                message_html: message,
+            };
+            emailjs.send('mailgun', 'template_UX7imrTZ', params).then(
+                function (response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                },
+                function (error) {
+                    console.log('FAILED...', error);
+                }
+            );
         }
     }, [success]);
 
