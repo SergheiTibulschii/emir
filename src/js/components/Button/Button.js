@@ -10,6 +10,7 @@ export const Button = ({
     shape = 'square',
     disabled,
     reducable = false,
+    htmlFor = 'button',
 }) => {
     const ref = useRef();
 
@@ -25,6 +26,7 @@ export const Button = ({
     return (
         <div className="inline-block relative">
             <button
+                type={htmlFor}
                 disabled={disabled}
                 onClick={onClick}
                 className={classes}
