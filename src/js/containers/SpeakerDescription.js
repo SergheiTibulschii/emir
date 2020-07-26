@@ -4,7 +4,6 @@ import { Social } from '../components/Social';
 
 export const SpeakerDescription = () => {
     const screen = useScreen();
-    console.log(screen);
     return (
         <section className="bg-gray-dark">
             <div className="flex sm:max-w-screen-sm md:max-w-screen-md flex-col px-6 sm:px-c8 md:px-6 lg:px-0 lg:max-w-screen-lg py-16 lg:py-c10 mx-auto md:flex-row">

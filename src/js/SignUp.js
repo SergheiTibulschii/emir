@@ -5,7 +5,6 @@ import { Input } from './components/Input';
 import { useState, useEffect, useRef } from 'preact/hooks';
 import { Button } from './components/Button/Button';
 import { CalendarBtn } from './components/Button/CalendarBtn';
-import { templates } from './templates';
 import emailjs from 'emailjs-com';
 
 const buttons = {
@@ -92,7 +91,7 @@ export const SignUp = () => {
         if (
             activeBtn &&
             stepTracker.current.contactWay &&
-            data[activeBtn.id] &&
+            (data.number || data.mail) &&
             !stepTracker.current.contactInfo
         ) {
             stepTracker.current.contactInfo = true;
@@ -100,7 +99,7 @@ export const SignUp = () => {
         } else if (
             activeBtn &&
             stepTracker.current.contactWay &&
-            !data[activeBtn.id] &&
+            !(data.number || data.mail) &&
             stepTracker.current.contactInfo
         ) {
             stepTracker.current.contactInfo = false;
@@ -113,7 +112,6 @@ export const SignUp = () => {
     }, [data, activeBtn]);
 
     const handleContactBtnClick = (btn) => () => {
-        console.log(btn);
         setActiveBtn(btn);
     };
 
@@ -129,7 +127,7 @@ export const SignUp = () => {
         if (!data.userName) {
             setError((er) => ({
                 ...er,
-                userName: 'Введи своё имя пожалуйста',
+                userName: 'Введи своё имя пожалуйста :)',
             }));
             return;
         }
@@ -139,7 +137,7 @@ export const SignUp = () => {
             if (!isValid) {
                 setError((er) => ({
                     ...er,
-                    mail: 'Ты ввёл не правильный адрес :(',
+                    mail: 'Указан не правильный адрес :(',
                 }));
                 return;
             }
@@ -159,8 +157,6 @@ export const SignUp = () => {
             return;
         }
 
-        setSuccess(true);
-        setStep(step + 1);
         const entries = new FormData(e.target).entries();
         const { mail } = Object.fromEntries(entries);
 
@@ -172,17 +168,17 @@ export const SignUp = () => {
                 'user_gZNRjXBKTSyq5iyj8qPZZ'
             )
             .then(
-                (result) => {
-                    console.log(result.text);
+                () => {
+                    setSuccess(true);
+                    setStep(step + 1);
                 },
                 (error) => {
-                    console.log(error.text);
+                    console.log('Что-то не так :(');
                 }
             );
     };
 
     const renderChoice = () => {
-        console.log(activeBtn.id);
         const isMail = activeBtn.id === 'mail';
 
         return (

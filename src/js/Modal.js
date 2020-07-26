@@ -1,6 +1,6 @@
 import { h } from 'preact';
 import cn from 'classnames';
-import { useRef, useState, useEffect } from 'preact/hooks';
+import { useRef } from 'preact/hooks';
 import { unmount, useOutsideClick } from './utils';
 
 const modalWrapperClasses = cn(

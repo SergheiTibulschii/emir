@@ -1,10 +1,6 @@
 import { h } from 'preact';
-import { PlayBtn } from './Button/PlayBtn';
-import { useState, useEffect, useRef } from 'preact/hooks';
 import video from '../../assets/video/ekaterina-mir.mp4';
 import poster from '../../assets/images/png/thumbnail.png';
-import { PauseBtn } from './Button/PauseBtn';
-import { useScreen } from '../utils';
 
 export const Video = ({ className }) => {
     return (

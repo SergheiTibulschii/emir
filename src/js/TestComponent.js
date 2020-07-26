@@ -1,7 +1,6 @@
 import { h } from 'preact';
-import { useRef, useState, useEffect } from 'preact/hooks';
-import cn from 'classnames';
-import { unmount, useOutsideClick, mountSignup } from './utils';
+import { useState } from 'preact/hooks';
+import { unmount } from './utils';
 import { RadioBox } from './components/RadioBox';
 import { Modal } from './Modal';
 import { SignupBtn } from './components/Button/SignupBtn';
