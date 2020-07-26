@@ -119,14 +119,21 @@ export const SignUp = () => {
                 from_name: data.useName,
                 message_html: message,
             };
-            emailjs.send('mailgun', 'template_f02aXQ9s', params).then(
-                function (response) {
-                    console.log('SUCCESS!', response.status, response.text);
-                },
-                function (error) {
-                    console.log('FAILED...', error);
-                }
-            );
+            emailjs
+                .send(
+                    'mailgun',
+                    'template_f02aXQ9s',
+                    'user_wmCKu7qUnIRL4iFEwtMuV',
+                    params
+                )
+                .then(
+                    function (response) {
+                        console.log('SUCCESS!', response.status, response.text);
+                    },
+                    function (error) {
+                        console.log('FAILED...', error);
+                    }
+                );
         }
     }, [success]);
 
