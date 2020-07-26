@@ -69,11 +69,11 @@ export const Main = () => {
                     <div className="flex flex-col">
                         <div className="text-sm md:text-f2 mb-c1 md:mb-0 lg:mb-c2 order-1 md:order-2 lg:order-1">
                             <div className="lg:mb-c1 text-center lg:text-center">
-                                До начала вебинара осталось:
+                                До начала осталось:
                             </div>
                             <Timer />
                         </div>
-                        <div className="text-center order-2 md:order-1 lg:order-2">
+                        <div className="text-center order-2 md:order-1 md:mb-c1 lg:mb-0 lg:order-2">
                             <SignupBtn />
                         </div>
                     </div>

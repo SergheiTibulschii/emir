@@ -1,7 +1,11 @@
 import { h } from 'preact';
 import { Scroller } from '../components/Scroller';
+import { mobileSocials, webSocials, useScreen } from '../utils';
+import { Social } from '../components/Social';
 
 export const Header = () => {
+    const screen = useScreen();
+
     return (
         <header className="fixed top-0 left-0 right-0 bg-white shadow-lg z-50">
             <div className="flex px-6 lg:px-8 xl:px-0 lg:max-w-screen-lg justify-between mx-auto py-2 lg:py-6">
@@ -9,30 +13,13 @@ export const Header = () => {
                     <img src="./assets/images/svg/logo.svg" />
                 </div>
                 <div aria-label="social" className="em-social hidden lg:flex">
-                    <div className="social">
-                        <a href="#">
-                            <img
-                                src="./assets/images/svg/instagram.svg"
-                                alt=""
-                            />
-                        </a>
-                    </div>
-                    <div className="social">
-                        <a href="#">
-                            <img
-                                src="./assets/images/svg/telegram.svg"
-                                alt=""
-                            />
-                        </a>
-                    </div>
-                    <div className="social">
-                        <a href="#">
-                            <img
-                                src="./assets/images/svg/whats-app.svg"
-                                alt=""
-                            />
-                        </a>
-                    </div>
+                    {screen >= 1024
+                        ? webSocials.map(({ alt, url, link }) => (
+                              <Social alt={alt} url={url} link={link} />
+                          ))
+                        : mobileSocials.map(({ alt, url, link }) => (
+                              <Social alt={alt} url={url} link={link} />
+                          ))}
                 </div>
             </div>
             <Scroller />

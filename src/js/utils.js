@@ -2,6 +2,10 @@ import { h, render } from 'preact';
 import TestComponent from './TestComponent';
 import { SignUp } from './SignUp';
 import { useEffect, useState } from 'preact/hooks';
+import wapp from '../assets/images/svg/whats-app.svg';
+import tele from '../assets/images/svg/telegram.svg';
+import inst from '../assets/images/svg/instagram.svg';
+import fb from '../assets/images/svg/fb.svg';
 
 export function unmount() {
     render(null, document.getElementById('modal'));
@@ -51,8 +55,9 @@ export const useTimer = (date) => {
     const [minutes, setMinutes] = useState(calcMins(seconds));
 
     useEffect(() => {
-        seconds = Math.round((date.getTime() - Date.now()) / 1000);
         const interval = setInterval(() => {
+            seconds = Math.round((date.getTime() - Date.now()) / 1000);
+
             if (seconds <= 0) {
                 clearInterval(interval);
             }
@@ -69,3 +74,52 @@ export const useTimer = (date) => {
 
     return { days, hours, minutes };
 };
+
+export const useScreen = () => {
+    const [screen, setScreen] = useState(document.documentElement.clientWidth);
+
+    useEffect(() => {
+        function onResize() {
+            setScreen(document.documentElement.clientWidth);
+        }
+
+        window.addEventListener('resize', onResize);
+
+        return () => {
+            window.removeEventListener('resize', onResize);
+        };
+    }, []);
+
+    return screen;
+};
+
+export const webSocials = [
+    {
+        alt: 'instagram',
+        url: inst,
+        link: 'instagram://user?username=english.mir',
+    },
+    {
+        alt: 'facebook',
+        url: fb,
+        link: 'https://www.facebook.com/English-Mir-110907933622669/',
+    },
+];
+
+export const mobileSocials = [
+    {
+        alt: 'instagramm',
+        url: inst,
+        link: 'instagram://user?username=english.mir',
+    },
+    {
+        alt: 'telegram',
+        url: tele,
+        link: 'tg://resolve?domain=@English_Mir_account',
+    },
+    {
+        alt: 'whats-app',
+        url: wapp,
+        link: 'https://wa.me/79216464401',
+    },
+];

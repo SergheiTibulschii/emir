@@ -4,17 +4,17 @@ import { useState, useEffect, useRef } from 'preact/hooks';
 import video from '../../assets/video/ekaterina-mir.mp4';
 import poster from '../../assets/images/png/thumbnail.png';
 import { PauseBtn } from './Button/PauseBtn';
+import { useScreen } from '../utils';
 
 export const Video = ({ className }) => {
     const videoRef = useRef();
     const [videoState, setVideoState] = useState('new');
-    const [screen, setScreen] = useState(document.documentElement.clientWidth);
+    const screen = useScreen();
     const [controls, showControls] = useState(
         screen < 1024 || videoState === 'new'
     );
 
     useEffect(() => {
-        setScreen(document.documentElement.clientWidth);
         let rt;
 
         function onTouch() {
