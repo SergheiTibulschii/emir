@@ -14,7 +14,7 @@ const filename = (ext) => (isDev ? `bundle.${ext}` : `bundle.[hash].${ext}`);
 module.exports = {
     mode: 'development',
     context: path.resolve(__dirname, 'src'),
-    entry: ['@babel/polyfill', './js/index.js'],
+    entry: ['./js/index.js'],
     output: {
         filename: filename('js'),
         path: path.resolve(__dirname, 'build'),
@@ -49,16 +49,16 @@ module.exports = {
                 },
             },
             {
-                test: /\.(png|jpe?g|gif|svg)$/i,
-                use: [
-                    {
-                        loader: 'file-loader',
-                    },
-                ],
+                test: /\.png$/,
+                use: 'file-loader?name=assets/images/png/[contenthash].[ext]',
+            },
+            {
+                test: /\.svg$/,
+                use: 'file-loader?name=assets/images/svg/[contenthash].[ext]',
             },
             {
                 test: /\.mp4$/,
-                use: 'file-loader?name=videos/[name].[ext]',
+                use: 'file-loader?name=assets/videos/[name].[ext]',
             },
         ],
     },
@@ -74,8 +74,8 @@ module.exports = {
                     to: path.resolve(__dirname, 'build'),
                 },
                 {
-                    from: path.resolve(__dirname, 'src/assets/images'),
-                    to: path.resolve(__dirname, 'build/assets/images'),
+                    from: path.resolve(__dirname, 'src/assets/images/png'),
+                    to: path.resolve(__dirname, 'build/assets/images/png'),
                 },
             ],
         }),

@@ -152,12 +152,6 @@ export const SignUp = () => {
                 number: 'Необходимо ввести номер телефона',
             }));
             return;
-        } else if (activeBtn.type === 'phone' && data.number.length !== 16) {
-            setError((er) => ({
-                ...er,
-                number: 'Неверный номер телефона :(',
-            }));
-            return;
         }
 
         const entries = new FormData(e.target).entries();

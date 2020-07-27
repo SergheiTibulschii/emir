@@ -9,7 +9,7 @@ export const Input = ({ onChange, label, type, name, error }) => {
     useEffect(() => {
         if (type === 'phone') {
             const mask = IMask(inputRef.current, {
-                mask: '+{7}(000)000-00-00',
+                mask: '+0000000000000',
             });
 
             mask.on('accept', (e) => {
