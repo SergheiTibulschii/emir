@@ -59,7 +59,12 @@ const YouWillKnow = ({ url, html, order }) => {
     );
 
     return (
-        <div className={classes}>
+        <div
+            className={classes}
+            data-aos="fade-up"
+            data-aos-easing="ease-in-out"
+            data-aos-duration="800"
+        >
             <img className={imgClasses} src={url} />
             <p
                 className={textClasses}

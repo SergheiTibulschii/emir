@@ -6,8 +6,17 @@ import { YouWillFindOut } from './containers/YouWillFindOut';
 import { SpeakerDescription } from './containers/SpeakerDescription';
 import { SocialsFooter } from './containers/SocialsFooter';
 import { Summary } from './containers/Summary';
+import { useEffect } from 'preact/hooks';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export const App = () => {
+    useEffect(() => {
+        AOS.init({
+            once: true,
+        });
+    }, []);
+
     return (
         <div className="em-app">
             <Header />

@@ -36,6 +36,7 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+    "aos": "^2.3.4",
     "classnames": "^2.2.6",
     "emailjs-com": "^2.6.3",
     "imask": "^6.0.5",

@@ -7,10 +7,18 @@ export const SpeakerDescription = () => {
     return (
         <section className="bg-gray-dark">
             <div className="flex sm:max-w-screen-sm md:max-w-screen-md flex-col px-6 sm:px-c8 md:px-6 lg:px-0 lg:max-w-screen-lg py-16 lg:py-c10 mx-auto md:flex-row">
-                <div className="inline-block min-w-full md:min-w-320 lg:flex lg:justify-center lg:flex-1 overflow-hidden md:overflow-auto lg:overflow-hidden mb-4 md:mb-0">
+                <div
+                    data-aos="fade-right"
+                    data-aos-duration="800"
+                    className="inline-block min-w-full md:min-w-320 lg:flex lg:justify-center lg:flex-1 overflow-hidden md:overflow-auto lg:overflow-hidden mb-4 md:mb-0"
+                >
                     <div className="ekaterina-img mx-auto md:mx-0"></div>
                 </div>
-                <div className="lg:flex-1">
+                <div
+                    data-aos="fade-left"
+                    data-aos-duration="800"
+                    className="lg:flex-1"
+                >
                     <div className="h-full flex flex-col justify-between ml-0 md:ml-4 lg:ml-c8">
                         <div className="flex flex-col flex-1 pb-4">
                             <div className="text-f2 text-blue-dark font-normal hidden lg:block">

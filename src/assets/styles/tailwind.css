@@ -281,5 +281,20 @@ input.em-input:focus {
         height: auto;
     }
 }
+
+div[data-aos^='fade'][data-aos^='fade'] {
+    opacity: 0;
+    transition-property: opacity, transform;
+
+    &.aos-animate {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+div[data-aos='fade-up'] {
+    transform: translate3d(0, 100px, 0);
+}
+
 /* purgecss end ignore */
 @tailwind utilities;
