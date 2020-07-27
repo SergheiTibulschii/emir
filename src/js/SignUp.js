@@ -1,16 +1,19 @@
 import { h } from 'preact';
 import { Modal } from './Modal';
-import { unmount, validateEmail } from './utils';
+import { validateEmail } from './utils';
 import { Input } from './components/Input';
 import { useState, useEffect, useRef } from 'preact/hooks';
 import { Button } from './components/Button/Button';
 import { CalendarBtn } from './components/Button/CalendarBtn';
 import emailjs from 'emailjs-com';
+import logoIcon from '../assets/images/svg/logo.svg';
+import arrowLeftIcon from '../assets/images/svg/arrow-left.svg';
+import cancelIcon from '../assets/images/svg/cancel.svg';
 
 const buttons = {
     sms: {
         id: 'sms',
-        title: 'Sms',
+        title: 'SMS',
         type: 'phone',
         text: 'смс',
     },
@@ -219,54 +222,20 @@ export const SignUp = () => {
 
     return (
         <Modal>
-            <form onSubmit={validate}>
-                <div className="lg:hidden mb-6">
-                    <div className="px-6 lg:px-8 xl:px-0 py-2 lg:py-6">
-                        <div className="em-brand">
-                            <img src="./assets/images/svg/logo.svg" />
+            {(closeModal) => (
+                <form onSubmit={validate}>
+                    <div className="lg:hidden mb-6">
+                        <div className="px-6 lg:px-8 xl:px-0 py-2 lg:py-6">
+                            <div className="em-brand">
+                                <img src={logoIcon} />
+                            </div>
                         </div>
-                    </div>
-                    <div className="relative items-center">
-                        <div
-                            className="absolute top-0 left-0 z-50"
-                            style={{
-                                height: '4px',
-                                width: `${((step + 1) * 100) / 4}%`,
-                                transition: 'all 0.4s',
-                                background: '#0011A8',
-                            }}
-                        ></div>
-                        <div
-                            style={{
-                                height: '4px',
-                            }}
-                            className="absolute top-0 left-0 w-full z-40 rounded-lg bg-blue-light"
-                        ></div>
-                    </div>
-                </div>
-                <div className="px-c5 lg:px-0">
-                    <div className="flex justify-between lg:px-6 pt-6">
-                        <div
-                            style={{
-                                minWidth: '28px',
-                                display: 'flex',
-                            }}
-                        >
-                            {activeBtn && !success && (
-                                <button
-                                    className="mr-auto h-5 w-5 lg:h-8 lg:w-8"
-                                    onClick={goBack}
-                                >
-                                    <img src="./assets/images/svg/arrow-left.svg" />
-                                </button>
-                            )}
-                        </div>
-                        <div className="hidden lg:flex relative items-center rounded-lg px-10 flex-1">
+                        <div className="relative items-center">
                             <div
-                                className="relative z-50 rounded-lg"
+                                className="absolute top-0 left-0 z-50"
                                 style={{
                                     height: '4px',
-                                    width: `${((step + 1) * 100) / 5}%`,
+                                    width: `${((step + 1) * 100) / 4}%`,
                                     transition: 'all 0.4s',
                                     background: '#0011A8',
                                 }}
@@ -274,129 +243,179 @@ export const SignUp = () => {
                             <div
                                 style={{
                                     height: '4px',
-                                    width: 'calc(100% - 80px)',
                                 }}
-                                className="absolute rounded-lg bg-blue-light"
+                                className="absolute top-0 left-0 w-full z-40 rounded-lg bg-blue-light"
                             ></div>
                         </div>
-                        <button
-                            className="ml-auto h-5 w-5 lg:h-8 lg:w-8"
-                            onClick={unmount}
-                        >
-                            <img src="./assets/images/svg/cancel.svg" />
-                        </button>
                     </div>
-                    <Modal.Body>
-                        {!success ? (
-                            <div className="pt-12 pb-c12">
-                                <div className="mb-6 lg:mb-c5">
-                                    <Input
-                                        type="text"
-                                        onChange={handleInputChange}
-                                        name="userName"
-                                        label="Я Катя, а как зовут тебя?"
-                                        error={error}
-                                    />
-                                </div>
-                                <div>
-                                    <label className="block mb-c2 text-sm lg:text-f2">
-                                        Как тебе напомнить о вебинаре?
-                                    </label>
-                                </div>
-                                <div className="mb-10">
-                                    {!activeBtn ? (
-                                        <div>
-                                            <div className="mb-4 lg:mb-5">
-                                                <span className="mr-2 md:mr-12 lg:mr-c5">
-                                                    <Button
-                                                        type="ghost"
-                                                        reducable
-                                                        big={true}
-                                                        title={
-                                                            buttons.sms.title
-                                                        }
-                                                        disabled={
-                                                            !data.userName
-                                                        }
-                                                        onClick={handleContactBtnClick(
-                                                            buttons.sms
-                                                        )}
-                                                    />
-                                                </span>
-                                                <span className="mr-2 md:mr-12 lg:mr-c5">
-                                                    <Button
-                                                        type="ghost"
-                                                        reducable
-                                                        big={true}
-                                                        title={
-                                                            buttons.tel.title
-                                                        }
-                                                        disabled={
-                                                            !data.userName
-                                                        }
-                                                        onClick={handleContactBtnClick(
-                                                            buttons.tel
-                                                        )}
-                                                    />
-                                                </span>
-                                                <Button
-                                                    type="ghost"
-                                                    reducable
-                                                    big={true}
-                                                    title={buttons.viber.title}
-                                                    disabled={!data.userName}
-                                                    onClick={handleContactBtnClick(
-                                                        buttons.viber
-                                                    )}
-                                                />
-                                            </div>
-                                            <div>
-                                                <span className="mr-2 md:mr-12 lg:mr-c5">
-                                                    <Button
-                                                        type="ghost"
-                                                        reducable
-                                                        big={true}
-                                                        title={buttons.wa.title}
-                                                        disabled={
-                                                            !data.userName
-                                                        }
-                                                        onClick={handleContactBtnClick(
-                                                            buttons.wa
-                                                        )}
-                                                    />
-                                                </span>
-                                                <Button
-                                                    type="ghost"
-                                                    reducable
-                                                    big={true}
-                                                    title={buttons.mail.title}
-                                                    disabled={!data.userName}
-                                                    onClick={handleContactBtnClick(
-                                                        buttons.mail
-                                                    )}
-                                                />
-                                            </div>
-                                        </div>
-                                    ) : (
-                                        renderChoice(buttons)
-                                    )}
-                                </div>
-                                <div className="text-center">
-                                    <Button
-                                        disabled={!data.number && !data.mail}
-                                        type="danger"
-                                        shape="rounded"
-                                        title="Записаться"
-                                        htmlFor="submit"
-                                    />
-                                </div>
+                    <div className="px-c5 lg:px-0">
+                        <div className="flex justify-between lg:px-6 pt-6">
+                            <div
+                                style={{
+                                    minWidth: '28px',
+                                    display: 'flex',
+                                }}
+                            >
+                                {activeBtn && !success && (
+                                    <button
+                                        className="mr-auto h-5 w-5 lg:h-8 lg:w-8"
+                                        onClick={goBack}
+                                    >
+                                        <img src={arrowLeftIcon} />
+                                    </button>
+                                )}
                             </div>
-                        ) : (
-                            <Success />
-                        )}
-                    </Modal.Body>
-                </div>
-            </form>
+                            <div className="hidden lg:flex relative items-center rounded-lg px-10 flex-1">
+                                <div
+                                    className="relative z-50 rounded-lg"
+                                    style={{
+                                        height: '4px',
+                                        width: `${((step + 1) * 100) / 5}%`,
+                                        transition: 'all 0.4s',
+                                        background: '#0011A8',
+                                    }}
+                                ></div>
+                                <div
+                                    style={{
+                                        height: '4px',
+                                        width: 'calc(100% - 80px)',
+                                    }}
+                                    className="absolute rounded-lg bg-blue-light"
+                                ></div>
+                            </div>
+                            <button
+                                className="ml-auto h-5 w-5 lg:h-8 lg:w-8"
+                                onClick={closeModal}
+                            >
+                                <img src={cancelIcon} />
+                            </button>
+                        </div>
+                        <Modal.Body>
+                            {!success ? (
+                                <div className="pt-12 pb-c12">
+                                    <div className="mb-6 lg:mb-c5">
+                                        <Input
+                                            type="text"
+                                            onChange={handleInputChange}
+                                            name="userName"
+                                            label="Я Катя, а как зовут тебя?"
+                                            error={error}
+                                        />
+                                    </div>
+                                    <div>
+                                        <label className="block mb-c2 text-sm lg:text-f2">
+                                            Как тебе напомнить о вебинаре?
+                                        </label>
+                                    </div>
+                                    <div className="mb-10">
+                                        {!activeBtn ? (
+                                            <div>
+                                                <div className="mb-4 lg:mb-5">
+                                                    <span className="mr-2 md:mr-12 lg:mr-c5">
+                                                        <Button
+                                                            type="ghost"
+                                                            reducable
+                                                            big={true}
+                                                            title={
+                                                                buttons.sms
+                                                                    .title
+                                                            }
+                                                            disabled={
+                                                                !data.userName
+                                                            }
+                                                            onClick={handleContactBtnClick(
+                                                                buttons.sms
+                                                            )}
+                                                        />
+                                                    </span>
+                                                    <span className="mr-2 md:mr-12 lg:mr-c5">
+                                                        <Button
+                                                            type="ghost"
+                                                            reducable
+                                                            big={true}
+                                                            title={
+                                                                buttons.tel
+                                                                    .title
+                                                            }
+                                                            disabled={
+                                                                !data.userName
+                                                            }
+                                                            onClick={handleContactBtnClick(
+                                                                buttons.tel
+                                                            )}
+                                                        />
+                                                    </span>
+                                                    <Button
+                                                        type="ghost"
+                                                        reducable
+                                                        big={true}
+                                                        title={
+                                                            buttons.viber.title
+                                                        }
+                                                        disabled={
+                                                            !data.userName
+                                                        }
+                                                        onClick={handleContactBtnClick(
+                                                            buttons.viber
+                                                        )}
+                                                    />
+                                                </div>
+                                                <div>
+                                                    <span className="mr-2 md:mr-12 lg:mr-c5">
+                                                        <Button
+                                                            type="ghost"
+                                                            reducable
+                                                            big={true}
+                                                            title={
+                                                                buttons.wa.title
+                                                            }
+                                                            disabled={
+                                                                !data.userName
+                                                            }
+                                                            onClick={handleContactBtnClick(
+                                                                buttons.wa
+                                                            )}
+                                                        />
+                                                    </span>
+                                                    <Button
+                                                        type="ghost"
+                                                        reducable
+                                                        big={true}
+                                                        title={
+                                                            buttons.mail.title
+                                                        }
+                                                        disabled={
+                                                            !data.userName
+                                                        }
+                                                        onClick={handleContactBtnClick(
+                                                            buttons.mail
+                                                        )}
+                                                    />
+                                                </div>
+                                            </div>
+                                        ) : (
+                                            renderChoice(buttons)
+                                        )}
+                                    </div>
+                                    <div className="text-center">
+                                        <Button
+                                            disabled={
+                                                !data.number && !data.mail
+                                            }
+                                            type="danger"
+                                            shape="rounded"
+                                            title="Записаться"
+                                            htmlFor="submit"
+                                        />
+                                    </div>
+                                </div>
+                            ) : (
+                                <Success />
+                            )}
+                        </Modal.Body>
+                    </div>
+                </form>
+            )}
         </Modal>
     );
 };

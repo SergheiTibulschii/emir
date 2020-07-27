@@ -1,10 +1,12 @@
-import { h } from 'preact';
+import { h, Fragment } from 'preact';
 import { useState } from 'preact/hooks';
-import { unmount } from './utils';
 import { RadioBox } from './components/RadioBox';
 import { Modal } from './Modal';
 import { SignupBtn } from './components/Button/SignupBtn';
 import { Button } from './components/Button/Button';
+import logoIcon from '../assets/images/svg/logo.svg';
+import arrowLeftIcon from '../assets/images/svg/arrow-left.svg';
+import cancelIcon from '../assets/images/svg/cancel.svg';
 
 const questions = [
     {
@@ -165,139 +167,143 @@ const TestComponent = () => {
 
     return (
         <Modal>
-            <div className="lg:hidden mb-6">
-                <div className="px-6 lg:px-8 xl:px-0 py-2 lg:py-6">
-                    <div className="em-brand">
-                        <img src="./assets/images/svg/logo.svg" />
+            {(closeModal) => (
+                <Fragment>
+                    <div className="lg:hidden mb-6">
+                        <div className="px-6 lg:px-8 xl:px-0 py-2 lg:py-6">
+                            <div className="em-brand">
+                                <img src={logoIcon} />
+                            </div>
+                        </div>
+                        <div className="relative items-center">
+                            <div
+                                className="absolute top-0 left-0 z-50"
+                                style={{
+                                    height: '4px',
+                                    width: `${
+                                        ((currentStep + 1) * 100) /
+                                        (questions.length + 1)
+                                    }%`,
+                                    transition: 'all 0.4s',
+                                    background: '#0011A8',
+                                }}
+                            ></div>
+                            <div
+                                style={{
+                                    height: '4px',
+                                }}
+                                className="absolute top-0 left-0 w-full z-40 rounded-lg bg-blue-light"
+                            ></div>
+                        </div>
                     </div>
-                </div>
-                <div className="relative items-center">
-                    <div
-                        className="absolute top-0 left-0 z-50"
-                        style={{
-                            height: '4px',
-                            width: `${
-                                ((currentStep + 1) * 100) /
-                                (questions.length + 1)
-                            }%`,
-                            transition: 'all 0.4s',
-                            background: '#0011A8',
-                        }}
-                    ></div>
-                    <div
-                        style={{
-                            height: '4px',
-                        }}
-                        className="absolute top-0 left-0 w-full z-40 rounded-lg bg-blue-light"
-                    ></div>
-                </div>
-            </div>
-            <div className="px-c5 lg:py-6">
-                <Modal.Head>
-                    <div
-                        style={{
-                            minWidth: '28px',
-                            display: 'flex',
-                        }}
-                    >
-                        {Number(currentStep) !== 0 && !success && (
-                            <button
-                                className="mr-auto h-5 w-5 lg:h-8 lg:w-8"
-                                onClick={goBack}
+                    <div className="px-c5 lg:py-6">
+                        <Modal.Head>
+                            <div
+                                style={{
+                                    minWidth: '28px',
+                                    display: 'flex',
+                                }}
                             >
-                                <img src="./assets/images/svg/arrow-left.svg" />
+                                {Number(currentStep) !== 0 && !success && (
+                                    <button
+                                        className="mr-auto h-5 w-5 lg:h-8 lg:w-8"
+                                        onClick={goBack}
+                                    >
+                                        <img src={arrowLeftIcon} />
+                                    </button>
+                                )}
+                            </div>
+                            <div className="hidden lg:flex relative items-center rounded-lg px-10 flex-1">
+                                <div
+                                    className="relative z-50 rounded-lg"
+                                    style={{
+                                        height: '4px',
+                                        width: `${
+                                            ((currentStep + 1) * 100) /
+                                            (questions.length + 1)
+                                        }%`,
+                                        transition: 'all 0.4s',
+                                        background: '#0011A8',
+                                    }}
+                                ></div>
+                                <div
+                                    style={{
+                                        height: '4px',
+                                        width: 'calc(100% - 80px)',
+                                    }}
+                                    className="absolute rounded-lg bg-blue-light"
+                                ></div>
+                            </div>
+                            <button
+                                className="ml-auto h-5 w-5 lg:h-8 lg:w-8"
+                                onClick={closeModal}
+                            >
+                                <img src={cancelIcon} />
                             </button>
-                        )}
-                    </div>
-                    <div className="hidden lg:flex relative items-center rounded-lg px-10 flex-1">
-                        <div
-                            className="relative z-50 rounded-lg"
-                            style={{
-                                height: '4px',
-                                width: `${
-                                    ((currentStep + 1) * 100) /
-                                    (questions.length + 1)
-                                }%`,
-                                transition: 'all 0.4s',
-                                background: '#0011A8',
-                            }}
-                        ></div>
-                        <div
-                            style={{
-                                height: '4px',
-                                width: 'calc(100% - 80px)',
-                            }}
-                            className="absolute rounded-lg bg-blue-light"
-                        ></div>
-                    </div>
-                    <button
-                        className="ml-auto h-5 w-5 lg:h-8 lg:w-8"
-                        onClick={unmount}
-                    >
-                        <img src="./assets/images/svg/cancel.svg" />
-                    </button>
-                </Modal.Head>
-                <Modal.Body>
-                    {!isLastStep && (
-                        <h1 className="title pt-6 lg:pt-1 pb-8">
-                            А ты смотришь сериалы правильно?
-                        </h1>
-                    )}
-                    {currentStep > questions.length - 1 ? (
-                        success ? (
-                            <Success />
-                        ) : (
-                            <Fail />
-                        )
-                    ) : (
-                        <Step
-                            handleAnswer={handleAnswer}
-                            stepName={`step${currentStep}`}
-                            data={questions[currentStep]}
-                            answer={answers[currentStep]}
-                        />
-                    )}
-                </Modal.Body>
-                <div className="pb-5 pt-4">
-                    {!isLastStep ? (
-                        <div className="flex justify-center">
-                            <Button
-                                type="primary"
-                                shape="rounded"
-                                disabled={
-                                    !answers
-                                        .map((answer) => answer.step)
-                                        .includes(currentStep)
-                                }
-                                title="Далее"
-                                onClick={handleNext}
-                            />
-                        </div>
-                    ) : (
-                        <div>
-                            <div className="mb-6 text-center">
-                                <SignupBtn />
-                            </div>
-                            <div className="mb-6 text-center lg:hidden">
-                                <Button
-                                    shape="rounded"
-                                    type="danger"
-                                    title="Подробнее"
-                                    onClick={unmount}
+                        </Modal.Head>
+                        <Modal.Body>
+                            {!isLastStep && (
+                                <h1 className="title pt-6 lg:pt-1 pb-8">
+                                    А ты смотришь сериалы правильно?
+                                </h1>
+                            )}
+                            {currentStep > questions.length - 1 ? (
+                                success ? (
+                                    <Success />
+                                ) : (
+                                    <Fail />
+                                )
+                            ) : (
+                                <Step
+                                    handleAnswer={handleAnswer}
+                                    stepName={`step${currentStep}`}
+                                    data={questions[currentStep]}
+                                    answer={answers[currentStep]}
                                 />
-                            </div>
-                            <div className="text-center">
-                                <Button
-                                    title="пройти ещё раз"
-                                    type="primary"
-                                    shape="rounded"
-                                    onClick={reset}
-                                />
-                            </div>
+                            )}
+                        </Modal.Body>
+                        <div className="pb-5 pt-4">
+                            {!isLastStep ? (
+                                <div className="flex justify-center">
+                                    <Button
+                                        type="primary"
+                                        shape="rounded"
+                                        disabled={
+                                            !answers
+                                                .map((answer) => answer.step)
+                                                .includes(currentStep)
+                                        }
+                                        title="Далее"
+                                        onClick={handleNext}
+                                    />
+                                </div>
+                            ) : (
+                                <div>
+                                    <div className="mb-6 text-center">
+                                        <SignupBtn />
+                                    </div>
+                                    <div className="mb-6 text-center lg:hidden">
+                                        <Button
+                                            shape="rounded"
+                                            type="danger"
+                                            title="Подробнее"
+                                            onClick={closeModal}
+                                        />
+                                    </div>
+                                    <div className="text-center">
+                                        <Button
+                                            title="пройти ещё раз"
+                                            type="primary"
+                                            shape="rounded"
+                                            onClick={reset}
+                                        />
+                                    </div>
+                                </div>
+                            )}
                         </div>
-                    )}
-                </div>
-            </div>
+                    </div>
+                </Fragment>
+            )}
         </Modal>
     );
 };

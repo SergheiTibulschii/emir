@@ -1,6 +1,6 @@
 import { h } from 'preact';
 import cn from 'classnames';
-import { useRef } from 'preact/hooks';
+import { useRef, useState, useEffect } from 'preact/hooks';
 import { unmount, useOutsideClick } from './utils';
 
 const modalWrapperClasses = cn(
@@ -11,7 +11,8 @@ const modalWrapperClasses = cn(
 const modalClasses = cn(
     'em-modal',
     'lg:absolute w-full h-full overflow-hidden lg:rounded-lg bg-white z-50 lg:h-auto lg:w-c14',
-    'shadow-lg'
+    'shadow-lg',
+    'transition-opacity duration-200'
 );
 
 const modalHeader = cn('em-modal-header', 'flex justify-end');
@@ -20,16 +21,30 @@ const modalBody = cn('em-modal-body', 'md:px-c8');
 
 export const Modal = ({ children }) => {
     const ref = useRef();
+    const [opacity, setOpacity] = useState(0);
 
-    useOutsideClick(ref, unmount);
+    useEffect(() => {
+        setOpacity(1);
+    }, []);
+
+    const closeModal = () => {
+        setOpacity(0);
+        setTimeout(unmount, 300);
+    };
+
+    useOutsideClick(ref, closeModal);
 
     return (
         <div
             className={modalWrapperClasses}
-            style={{ background: 'rgba(0,0,0, 0.1)' }}
+            style={{
+                background: 'rgba(0,0,0, 0.1)',
+                transition: 'opacity 0.25s',
+                opacity,
+            }}
         >
             <div div ref={ref} className={modalClasses}>
-                {children}
+                {children(closeModal)}
             </div>
         </div>
     );

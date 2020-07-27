@@ -3,6 +3,7 @@ import { SignupBtn } from '../components/Button/SignupBtn';
 import { CalendarBtn } from '../components/Button/CalendarBtn';
 import { Video } from '../components/Video';
 import { Timer } from '../components/Timer';
+import circleFrameIcon from '../../assets/images/svg/circle-frame.svg';
 
 export const Main = () => {
     return (
@@ -49,10 +50,7 @@ export const Main = () => {
                                 alt=""
                             />
                             <div className="absolute top-0 left-0">
-                                <img
-                                    src="./assets/images/svg/circle-frame.svg"
-                                    alt=""
-                                />
+                                <img src={circleFrameIcon} alt="" />
                             </div>
                         </div>
                         <div className="flex md:order-1 flex-col items-center md:items-start w-full md:w-auto md:ml-0 mb-10 lg:mb-0">

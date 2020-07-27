@@ -71,7 +71,7 @@ module.exports = {
                     page: '#FFDFE5',
                 },
                 gray: {
-                    dark: '#EDEDED',
+                    dark: '#F2F2F2',
                 },
             },
             inset: {
