@@ -288,7 +288,7 @@ export const SignUp = () => {
 									<div className="mb-10">
 										{!activeBtn ? (
 											<div>
-												<div className="flex justify-between mb-4 lg:mb-5">
+												<div className="flex justify-between md:justify-start lg:justify-between mb-4 lg:mb-5">
 													<Button
 														type="ghost"
 														title={
@@ -300,7 +300,7 @@ export const SignUp = () => {
 														onClick={handleContactBtnClick(
 															buttons.tel
 														)}
-														className="-sign-up-btn"
+														className="-sign-up-btn md:mr-4 ld:mr-0"
 													/>
 													<Button
 														type="ghost"
@@ -311,7 +311,7 @@ export const SignUp = () => {
 														onClick={handleContactBtnClick(
 															buttons.wa
 														)}
-														className="-sign-up-btn"
+														className="-sign-up-btn md:mr-4 ld:mr-0"
 													/>
 													<Button
 														type="ghost"
