@@ -16,7 +16,7 @@ export const Input = ({ onChange, label, type, name, error }) => {
                 onChange(e);
             });
         }
-    }, []);
+    }, [type]);
 
     const classes = cn(
         'em-input',

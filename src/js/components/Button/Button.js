@@ -1,5 +1,4 @@
 import { h } from 'preact';
-import { useRef } from 'preact/hooks';
 import cn from 'classnames';
 
 export const Button = ({
@@ -11,11 +10,10 @@ export const Button = ({
     disabled,
     reducable = false,
     htmlFor = 'button',
+    className = 'em-btn'
 }) => {
-    const ref = useRef();
-
     const classes = cn(
-        'em-btn',
+        className,
         {
             '-big': big,
             '-reducable': reducable,
@@ -30,7 +28,6 @@ export const Button = ({
                 disabled={disabled}
                 onClick={onClick}
                 className={classes}
-                ref={ref}
             >
                 {title}
             </button>
