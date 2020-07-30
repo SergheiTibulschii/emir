@@ -77,8 +77,8 @@ module.exports = {
 					page: "#FFDFE5",
 				},
 				gray: {
+                    pale: '#FAFAFA',
 					light: "#4F4F4F",
-
 					dark: "#F2F2F2",
 				},
 			},

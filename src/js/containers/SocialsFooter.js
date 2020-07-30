@@ -4,7 +4,7 @@ import { Social } from '../components/Social';
 
 export const SocialsFooter = () => {
     return (
-        <section className="md:hidden">
+        <section className="md:hidden bg-gray-pale">
             <div className="py-6">
                 <h2 className="font-bold text-f1 text-center">
                     Остались вопросы? <br />

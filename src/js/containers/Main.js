@@ -7,8 +7,8 @@ import circleFrameIcon from '../../assets/images/svg/circle-frame.svg';
 
 export const Main = () => {
     return (
-        <section className="max-w-560 mx-auto md:max-w-full md:mx-0 mt-12 lg:mt-20 md:px-4 lg:px-0 py-6 md:py-8 lg:py-c10">
-            <div className="lg:px-8 xl:px-0 lg:max-w-screen-lg mx-auto">
+        <section className="bg-gray-pale mx-auto md:mx-0 mt-12 lg:mt-20 md:px-4 lg:px-0 py-6 md:py-8 lg:py-c10">
+            <div className="max-w-560 md:max-w-full lg:px-8 xl:px-0 lg:max-w-screen-lg mx-auto">
                 <div className="flex justify-between md:flex-col lg:flex-row">
                     <div className="mx-auto lg:mx-0 md:mb-10 lg:mb-0">
                         <div className="text-base md:text-f2 text-blue-dark font-normal text-center lg:text-left">
@@ -44,7 +44,7 @@ export const Main = () => {
                         </div>
                     </div>
                     <div className="flex md:justify-center md:w-1/2 lg:w-auto relative">
-                        <div className="flex md:order-2 w-20 h-20 md:w-c9 md:h-c9 lg:w-c9 lg:h-c9 rounded-full items-center justify-center absolute right-c2 top-0 md:relative md:right-auto md:top-auto overflow-hidden lg:mr-4">
+                        <div className="flex order-2 lg:order-1 w-20 h-20 md:w-c9 md:h-c9 lg:w-c9 lg:h-c9 rounded-full items-center justify-center absolute right-c2 top-0 md:relative md:right-auto md:top-auto overflow-hidden lg:mr-4">
                             <img
                                 src="./assets/images/png/circle-photo.png"
                                 alt=""
@@ -53,7 +53,7 @@ export const Main = () => {
                                 <img src={circleFrameIcon} alt="" />
                             </div>
                         </div>
-                        <div className="flex md:order-1 flex-col items-center md:items-start w-full md:w-auto md:ml-0 mb-10 lg:mb-0">
+                        <div className="flex order-1 lg:order-2 flex-col items-center md:items-start w-full md:w-auto md:ml-0 mb-10 lg:mb-0">
                             <div className="inline-block text-center md:text-left text-f0 md:text-f1 font-bold mb-c1 md:mb-c1 ml-5 md:ml-0">
                                 Екатерина Миронова
                             </div>

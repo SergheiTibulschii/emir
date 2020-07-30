@@ -71,7 +71,7 @@ const YouWillKnow = ({ url, html, order }) => {
 
 export const YouWillFindOut = () => {
     return (
-        <section>
+        <section className='bg-gray-pale'>
             <div className="mx-auto px-6 lg:px-0 lg:max-w-screen-lg py-6 md:py-8 lg:py-c10 text-center">
                 <Video className="mx-auto md:mx-0 flex items-center justify-center md:hidden overflow-hidden mb-c5" />
                 <h1 className="title mb-5 md:mb-10">НА ВЕБИНАРЕ ВЫ УЗНАЕТЕ:</h1>
