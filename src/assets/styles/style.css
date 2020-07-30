@@ -610,15 +610,15 @@ input {
   width: 100%;
 }
 
-@media (min-width: 640px){
+@media (min-width: 460px){
   .container{
-    max-width: 640px;
+    max-width: 460px;
   }
 }
 
-@media (min-width: 768px){
+@media (min-width: 658px){
   .container{
-    max-width: 768px;
+    max-width: 658px;
   }
 }
 
@@ -901,14 +901,14 @@ input.em-input:focus {
   height: 240px;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 460px) {
   .ekaterina-img {
     height: 211px;
     background-position: unset;
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 658px) {
   .em-btn.-reducable {
     font-size: 32px;
   }
@@ -11226,11 +11226,11 @@ input.em-input:focus {
 }
 
 .max-w-screen-sm{
-  max-width: 640px;
+  max-width: 460px;
 }
 
 .max-w-screen-md{
-  max-width: 768px;
+  max-width: 658px;
 }
 
 .max-w-screen-lg{
@@ -20928,20 +20928,20 @@ input.em-input:focus {
   transition-delay: 1000ms;
 }
 
-@media (min-width: 640px){
+@media (min-width: 460px){
   .sm\:container{
     width: 100%;
   }
 
-  @media (min-width: 640px){
+  @media (min-width: 460px){
     .sm\:container{
-      max-width: 640px;
+      max-width: 460px;
     }
   }
 
-  @media (min-width: 768px){
+  @media (min-width: 658px){
     .sm\:container{
-      max-width: 768px;
+      max-width: 658px;
     }
   }
 
@@ -31213,11 +31213,11 @@ input.em-input:focus {
   }
 
   .sm\:max-w-screen-sm{
-    max-width: 640px;
+    max-width: 460px;
   }
 
   .sm\:max-w-screen-md{
-    max-width: 768px;
+    max-width: 658px;
   }
 
   .sm\:max-w-screen-lg{
@@ -40860,20 +40860,20 @@ input.em-input:focus {
   }
 }
 
-@media (min-width: 768px){
+@media (min-width: 658px){
   .md\:container{
     width: 100%;
   }
 
-  @media (min-width: 640px){
+  @media (min-width: 460px){
     .md\:container{
-      max-width: 640px;
+      max-width: 460px;
     }
   }
 
-  @media (min-width: 768px){
+  @media (min-width: 658px){
     .md\:container{
-      max-width: 768px;
+      max-width: 658px;
     }
   }
 
@@ -51145,11 +51145,11 @@ input.em-input:focus {
   }
 
   .md\:max-w-screen-sm{
-    max-width: 640px;
+    max-width: 460px;
   }
 
   .md\:max-w-screen-md{
-    max-width: 768px;
+    max-width: 658px;
   }
 
   .md\:max-w-screen-lg{
@@ -60797,15 +60797,15 @@ input.em-input:focus {
     width: 100%;
   }
 
-  @media (min-width: 640px){
+  @media (min-width: 460px){
     .lg\:container{
-      max-width: 640px;
+      max-width: 460px;
     }
   }
 
-  @media (min-width: 768px){
+  @media (min-width: 658px){
     .lg\:container{
-      max-width: 768px;
+      max-width: 658px;
     }
   }
 
@@ -71077,11 +71077,11 @@ input.em-input:focus {
   }
 
   .lg\:max-w-screen-sm{
-    max-width: 640px;
+    max-width: 460px;
   }
 
   .lg\:max-w-screen-md{
-    max-width: 768px;
+    max-width: 658px;
   }
 
   .lg\:max-w-screen-lg{
@@ -80729,15 +80729,15 @@ input.em-input:focus {
     width: 100%;
   }
 
-  @media (min-width: 640px){
+  @media (min-width: 460px){
     .xl\:container{
-      max-width: 640px;
+      max-width: 460px;
     }
   }
 
-  @media (min-width: 768px){
+  @media (min-width: 658px){
     .xl\:container{
-      max-width: 768px;
+      max-width: 658px;
     }
   }
 
@@ -91009,11 +91009,11 @@ input.em-input:focus {
   }
 
   .xl\:max-w-screen-sm{
-    max-width: 640px;
+    max-width: 460px;
   }
 
   .xl\:max-w-screen-md{
-    max-width: 768px;
+    max-width: 658px;
   }
 
   .xl\:max-w-screen-lg{

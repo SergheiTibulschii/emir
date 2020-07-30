@@ -7,7 +7,7 @@ import circleFrameIcon from '../../assets/images/svg/circle-frame.svg';
 
 export const Main = () => {
     return (
-        <section className="max-w-560 mx-auto md:max-w-full md:mx-0 mt-12 lg:mt-20 md:px-16 lg:px-0 py-6 md:py-8 lg:py-c10">
+        <section className="max-w-560 mx-auto md:max-w-full md:mx-0 mt-12 lg:mt-20 md:px-4 lg:px-0 py-6 md:py-8 lg:py-c10">
             <div className="lg:px-8 xl:px-0 lg:max-w-screen-lg mx-auto">
                 <div className="flex justify-between md:flex-col lg:flex-row">
                     <div className="mx-auto lg:mx-0 md:mb-10 lg:mb-0">
@@ -29,13 +29,13 @@ export const Main = () => {
                     <Video className="hidden md:block md:mx-auto lg:mx-0" />
                 </div>
                 <div className="md:flex md:flex-wrap md:justify-center lg:justify-between lg:px-0 mt-5 md:mt-12 lg:mt-c6">
-                    <div className="w-full relative flex justify-center md:justify-start lg:pr-4 md:w-1/2 lg:w-auto mb-10 lg:mb-0">
+                    <div className="w-full relative flex justify-center md:justify-center lg:pr-4 md:w-1/2 lg:w-auto mb-10 lg:mb-0">
                         <CalendarBtn className="absolute md:relative" />
                         <div className="flex items-center mt-2 md:mt-0 md:block lg:block">
                             <div className="hidden md:block md:mb-c1 text-f1 font-bold">
                                 Когда:
                             </div>
-                            <div className="text-sm md:text-f2 lg:text-f2">
+                            <div className="text-sm md:text-f1 lg:text-f2">
                                 Вторник, 10 июля <br />
                                 20:00 (Мск){' '}
                                 <br className="block md:hidden lg:block" />
@@ -43,7 +43,7 @@ export const Main = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="flex md:justify-end md:w-1/2 lg:w-auto relative">
+                    <div className="flex md:justify-center md:w-1/2 lg:w-auto relative">
                         <div className="flex md:order-2 w-20 h-20 md:w-c9 md:h-c9 lg:w-c9 lg:h-c9 rounded-full items-center justify-center absolute right-c2 top-0 md:relative md:right-auto md:top-auto overflow-hidden lg:mr-4">
                             <img
                                 src="./assets/images/png/circle-photo.png"
@@ -57,7 +57,7 @@ export const Main = () => {
                             <div className="inline-block text-center md:text-left text-f0 md:text-f1 font-bold mb-c1 md:mb-c1 ml-5 md:ml-0">
                                 Екатерина Миронова
                             </div>
-                            <div className="inline-flex text-left text-sm md:text-f2">
+                            <div className="inline-flex text-left text-sm md:text-f1">
                                 преподаватель <br />
                                 английского с <br />
                                 10-летним стажем

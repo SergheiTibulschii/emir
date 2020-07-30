@@ -233,14 +233,14 @@ input.em-input:focus {
     height: 240px;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 460px) {
     .ekaterina-img {
         height: 211px;
         background-position: unset;
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 658px) {
     .em-btn.-reducable {
         font-size: 32px;
     }
