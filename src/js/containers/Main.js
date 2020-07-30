@@ -57,7 +57,7 @@ export const Main = () => {
                             <div className="inline-block text-center md:text-left text-f0 md:text-f1 font-bold mb-c1 md:mb-c1 ml-5 md:ml-0">
                                 Екатерина Миронова
                             </div>
-                            <div className="inline-flex text-left text-sm md:text-f1">
+                            <div className="inline-flex text-left text-sm md:text-f1 lg:text-f2">
                                 преподаватель <br />
                                 английского с <br />
                                 10-летним стажем
