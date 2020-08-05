@@ -169,7 +169,7 @@ const TestComponent = () => {
         <Modal>
             {(closeModal) => (
                 <Fragment>
-                    <div className="lg:hidden mb-6">
+                    <div className="lg:hidden mb-6 shadow-xl">
                         <div className="px-6 lg:px-8 xl:px-0 py-2 lg:py-6">
                             <div className="em-brand">
                                 <img src={logoIcon} />
@@ -192,7 +192,7 @@ const TestComponent = () => {
                                 style={{
                                     height: '4px',
                                 }}
-                                className="absolute top-0 left-0 w-full z-40 rounded-lg bg-blue-light"
+                                className="absolute top-0 left-0 w-full z-40 bg-blue-light"
                             ></div>
                         </div>
                     </div>

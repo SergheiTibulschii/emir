@@ -43,7 +43,11 @@ export const Modal = ({ children }) => {
                 opacity,
             }}
         >
-            <div div ref={ref} className={modalClasses}>
+            <div
+                ref={ref}
+                style={{ background: '#FAFAFA' }}
+                className={modalClasses}
+            >
                 {children(closeModal)}
             </div>
         </div>
