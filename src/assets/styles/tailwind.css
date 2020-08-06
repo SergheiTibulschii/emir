@@ -46,6 +46,7 @@ input {
 } 
 
 button.-ghost {
+    background: white;
     box-shadow: inset 0px 0px 5px #3CB9FF;
 }
 
@@ -202,8 +203,8 @@ button.-sign-up-btn {
 }
 
 .radio .radio__input input:checked + .radio__control .radio__control_inner {
-    width: 16px;
-    height: 16px;
+    width: 15px;
+    height: 15px;
 }
 
 input.em-input {
