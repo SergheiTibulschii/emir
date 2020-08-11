@@ -36,7 +36,7 @@ export const Main = () => {
                                 Когда:
                             </div>
                             <div className="text-sm md:text-f1 lg:text-f2">
-                                Вторник, 10 июля <br />
+                                Вторник, 15 сентября <br />
                                 20:00 (Мск){' '}
                                 <br className="block md:hidden lg:block" />
                                 онлайн
