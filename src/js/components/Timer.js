@@ -21,7 +21,7 @@ const hoursForms = ['час', 'часа', 'часов'];
 const minForms = ['минута', 'минуты', 'минут'];
 
 export const Timer = () => {
-    const { days, hours, minutes } = useTimer(new Date(2020, 6, 28, 12, 0));
+    const { days, hours, minutes } = useTimer(new Date(2020, 8, 15, 12, 0));
     return (
         <div className="text-center lg:text-center">
             {days} {declOfNum(days, daysForms)} {hours}{' '}
